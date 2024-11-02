@@ -1,0 +1,56 @@
+
+  
+  .claim-section {
+    background: linear-gradient(90deg, #6a52e4, #a17fff); /* Gradiente */
+    padding: 100px 0;
+  }
+  
+  .claim-text {
+    color:white;
+    font-weight: 600;
+  }
+  
+  .card-wrapper {
+    margin-top: -60px; /* Le card escono dalla sezione */
+  }
+  
+  .custom-card {
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    transition: box-shadow 0.3s ease-in-out;
+    height: 270px;
+  }
+  
+  .custom-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .custom-card .card-title {
+      color: var(--secondary-color); /* Grigio chiaro per il sottotitolo */
+      font-weight: 700;
+    }
+    
+    .custom-card .card-subtitle {
+      color: var(--primary-color); /* Colore Material 3 */
+      font-weight: 500;
+  }
+  
+  .custom-card .card-text {
+    color: #424242; /* Testo della descrizione */
+  }
+  
+  @media (max-width: 1280px) {
+    .card-wrapper {
+      margin-top: -50px;
+    }
+    .claim-section {
+        padding: 80px 0;
+      }
+      .custom-card{
+        height: auto;
+      }
+  }
+  

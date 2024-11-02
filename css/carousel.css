@@ -1,0 +1,124 @@
+/* Stile per le card */
+.carousel-card .card {
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Assicura che il contenuto si distribuisca verticalmente */
+}
+
+/* Altezza uniforme per tutte le card */
+.carousel-card .carousel-item .card {
+    height: 500px; /* Imposta un'altezza minima uniforme per le card */
+    min-width: 250px;
+}
+
+/* La sezione immagine ha un'altezza fissa */
+.carousel-card .card img {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* Distribuzione del contenuto della card */
+.carousel-card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Titolo, sottotitolo, descrizione e pulsante distribuiti uniformemente */
+    flex-grow: 1;
+}
+
+.carousel-card .card-body .card-title, 
+.carousel-card .card-body .card-subtitle, 
+.carousel-card .card-body .card-text {
+    margin-bottom: 10px; /* Spazio tra gli elementi interni */
+}
+
+/* Stile per gli indicatori del carousel */
+.carousel-indicators .active {
+    background-color: var(--secondary-color); /* Colore per l'indicatore attivo */
+}
+
+.carousel-indicators {
+    bottom: -55px; /* Cambia il valore se vuoi che sia più o meno distante nella versione mobile */
+}
+
+/* Stile per i titoli Recent Projects */
+.recent-title {
+    color: var(--primary-color); /* Colore per il titolo Recent */
+}
+
+.projects-title {
+    color: var(--secondary-color); /* Colore per il titolo Projects */
+}
+/* Stile per le frecce del carosello (prev e next) */
+.carousel-control-prev, 
+.carousel-control-next {
+    width: 40px; /* Larghezza del cerchio */
+    height: 40px; /* Altezza del cerchio */
+    background-color: rgba(0, 0, 0, 0.7); /* Sfondo nero più scuro e semitrasparente */
+    border-radius: 50%; /* Forma circolare */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute; /* Posizione assoluta */
+    top: 50%; /* Allinea verticalmente al centro */
+    transform: translateY(-50%); /* Correzione per il posizionamento al centro */
+    z-index: 1; /* Assicura che siano visibili sopra gli altri elementi */
+}
+
+/* Posiziona la freccia sinistra */
+.carousel-control-prev {
+    left: 15px; /* Posiziona a sinistra */
+}
+
+/* Posiziona la freccia destra */
+.carousel-control-next {
+    right: 15px; /* Posiziona a destra */
+}
+
+/* Stile per l'icona delle frecce */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1) brightness(2); /* Colore bianco per l'icona */
+    width: 20px;
+    height: 20px;
+}
+
+.carousel-control-prev:hover, 
+.carousel-control-next:hover {
+    background-color: rgba(0, 0, 0, 0.9); /* Sfondo ancora più scuro al passaggio del mouse */
+}
+
+/* Rimuovi il bordo quando si clicca */
+.carousel-control-prev:focus,
+.carousel-control-next:focus {
+    outline: none;
+}
+
+
+/* Media query per schermi piccoli (mobile) */
+@media (max-width: 768px) {
+    .carousel-card .carousel-item .row {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: center;
+    }
+
+    .carousel-card .carousel-item .col-md-4 {
+        flex: 0 0 100%; /* Ogni card occupa il 100% della larghezza */
+        max-width: 100%;
+    }
+
+    /* Altezza minima specifica per il mobile, se necessario */
+    .carousel-card .carousel-item .card {
+        width: '100%';
+    }
+   
+  
+
+}

@@ -1,0 +1,92 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+:root {
+  --primary-color: #11054e;
+  --secondary-color: #6a52e4;
+  --background-color: #f5f3fb;
+  --support-text-color: #a17fff;
+}
+
+/* Imposta il background per il body */
+body {
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  font-family: "SUSE", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Button Styles */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-outline-primary {
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Modifica per la navbar */
+.navbar-brand {
+  color: var(--primary-color);
+}
+
+.nav-link {
+  color: var(--primary-color);
+}
+
+.nav-link:hover {
+  color: var(--secondary-color);
+}
+
+/* Support text */
+.text-secondary,
+.text-muted {
+  color: var(--support-text-color);
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 600; /* semibold */
+  color: var(--primary-color);
+}
+
+h3 {
+  font-size: 28px;
+  font-weight: 600; /* semibold */
+  color: var(--primary-color);
+}
+
+h4 {
+  font-size: 24px;
+  font-weight: 500; /* medium */
+  color: var(--primary-color);
+}
+
+h5 {
+  font-size: 24px;
+  font-weight: 400; /* regular */
+  color: var(--primary-color);
+}

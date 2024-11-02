@@ -1,71 +1,979 @@
 <!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Portfolio di Carola Caccamo">
-    <meta property="og:description" content="UX/UI Designer e appassionata di tecnologia e design. Scopri il mio lavoro.">
-    <title>Carola Caccamo - Portfolio</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
-<body>
-    <header class="bg-light text-center p-4">
-        <h1>Carola Caccamo</h1>
-        <nav>
-            <ul class="nav justify-content-center">
-                <li class="nav-item"><a class="nav-link" href="about.html">Chi Sono</a></li>
-                <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contatti</a></li>
-            </ul>
-        </nav>
-    </header>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio personale</title>
+    <link rel="icon" type="image/svg+xml" href="./css/img/favicon.ico" />
 
-    <main class="container my-5">
-        <section class="text-center">
-            <h2>Benvenuti nel mio portfolio!</h2>
-            <p>Sono Carola Caccamo, appassionata di design e tecnologia. In questo sito troverete informazioni su di me, i miei progetti e come contattarmi.</p>
-            <a href="portfolio.html" class="btn btn-primary">Guarda i miei progetti</a>
-        </section>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-        <section class="my-5">
-            <h3>I miei progetti</h3>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="url-del-tuo-progetto1.jpg" class="card-img-top" alt="Progetto 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Progetto 1</h5>
-                            <p class="card-text">Breve descrizione del progetto.</p>
-                            <a href="link-al-progetto1" class="btn btn-primary">Visualizza</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="url-del-tuo-progetto2.jpg" class="card-img-top" alt="Progetto 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Progetto 2</h5>
-                            <p class="card-text">Breve descrizione del progetto.</p>
-                            <a href="link-al-progetto2" class="btn btn-primary">Visualizza</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="url-del-tuo-progetto3.jpg" class="card-img-top" alt="Progetto 3">
-                        <div class="card-body">
-                            <h5 class="card-title">Progetto 3</h5>
-                            <p class="card-text">Breve descrizione del progetto.</p>
-                            <a href="link-al-progetto3" class="btn btn-primary">Visualizza</a>
-                        </div>
-                    </div>
-                </div>
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Navbar CSS -->
+    <link rel="stylesheet" href="css/navbar.css" />
+    <!-- Hero CSS -->
+    <link rel="stylesheet" href="css/hero.css" />
+    <!-- Section Skills-->
+    <link rel="stylesheet" href="css/skills.css" />
+    <!-- Section AboutMe-->
+    <link rel="stylesheet" href="css/aboutme.css" />
+    <!-- Section Carousel-->
+    <link rel="stylesheet" href="css/carousel.css" />
+    <!-- Section Footer-->
+    <link rel="stylesheet" href="css/footer.css" />
+    <!-- Section Timeline-->
+    <link rel="stylesheet" href="css/timeline.css" />
+  </head>
+  <style>
+    /* Stile di base per le icone */
+    .icon-container {
+      position: relative;
+      display: inline-block;
+      width: 48px;
+      height: 48px;
+      margin: 8px;
+    }
+
+    /* Stile del tooltip */
+    .icon-container::after {
+      content: attr(data-title);
+      position: absolute;
+      bottom: 120%; /* Posiziona sopra l'icona */
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #333;
+      color: #fff;
+      padding: 6px;
+      border-radius: 4px;
+      font-size: 12px;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s ease-in-out;
+      pointer-events: none;
+    }
+
+    /* Mostra il tooltip al passaggio del mouse */
+    .icon-container:hover::after {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .icon-container2 {
+      position: relative;
+      display: inline-block;
+      width: 48px;
+      height: 48px;
+    }
+
+    /* Stile del tooltip */
+    .icon-container2::after {
+      content: attr(data-title);
+      position: absolute;
+      bottom: 120%; /* Posiziona sopra l'icona */
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #333;
+      color: #fff;
+      padding: 6px;
+      border-radius: 4px;
+      font-size: 12px;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s ease-in-out;
+      pointer-events: none;
+    }
+
+    /* Mostra il tooltip al passaggio del mouse */
+    .icon-container2:hover::after {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-navbar">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#"><img alt="logo" src="./css/img/favicon.ico"></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#skillsTarget"
+                >Skills</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#abotuMeTarget">Su di me</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projectTarget">Progetti</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#percorsoTarget">Percorso</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="container hero">
+      <div class="box">
+        <div class="col-lg-6">
+          <h1 class="display-4 heroText" >
+            Progettazione di interfacce intuitive che connettano e ispirino
+          </h1>
+          <div class="buttonBox">
+            <a href="form.html" class="btn btn-primary rounded-pill"
+              >Contattami</a
+            >
+            <a href="./css/cv-CaccamoCarola.pdf" download="cv-CaccamoCarola.pdf" class="btn btn-outline-primary rounded-pill"
+              >Scarica CV</a
+            >
+          </div>
+          
+        </div>
+        <div class="col-lg-6 text-center imgBox">
+          <img
+            src="./css/img/hero-image.svg"
+            alt="Immagine Hero"
+            class="img-fluid"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="skillsTarget" class="claim-section text-center">
+      <div class="container">
+        <h1 class="claim-text">
+          Creazione di esperienze digitali
+          <span class="intuitive">omogenee </span> <br />mirate a coinvolgere e
+          <span class="delight">ispirare </span>gli utenti.
+        </h1>
+      </div>
+    </section>
+
+    <div class="container card-wrapper">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="card custom-card">
+            <div class="card-body">
+              <h5 class="card-title mb-2">01</h5>
+              <h5 class="card-subtitle mb-3">UI / UX Design</h5>
+              <p class="card-text">
+                Creazione di interfacce intuitive e visivamente accattivanti per
+                il web e il mobile, con l'obiettivo di migliorare l'usabilità e
+                garantire un'esperienza senza soluzione di continuità su tutti i
+                dispositivi.
+              </p>
             </div>
-        </section>
-    </main>
+          </div>
+        </div>
 
-    <footer class="bg-light text-center p-3">
-        <p>© 2024 Carola Caccamo | <a href="https://www.instagram.com/carolac_uxui/" target="_blank">Instagram</a> | <a href="https://github.com/il-tuo-username" target="_blank">GitHub</a></p>
+        <div class="col-md-3">
+          <div class="card custom-card">
+            <div class="card-body">
+              <h5 class="card-title mb-2">02</h5>
+              <h5 class="card-subtitle mb-3">Accessibilità</h5>
+              <p class="card-text">
+                Garantire che le esperienze digitali siano accessibili a tutti,
+                progettando interfacce inclusive che diano proorità
+                all'usabilità per gli utenti di tutte le abilità e necessità.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card custom-card">
+            <div class="card-body">
+              <h5 class="card-title mb-2">03</h5>
+              <h5 class="card-subtitle mb-3">Ricerca Utente</h5>
+              <p class="card-text">
+                Ricerca sugli utenti per ottenere informazioni, identificare le
+                sfide e comprendere le esigenze, per garantire che le decisioni
+                di progettazione migliorino l'esperienza utente.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card custom-card">
+            <div class="card-body">
+              <h5 class="card-title mb-2">04</h5>
+              <h5 class="card-subtitle mb-3">Graphic Design</h5>
+              <p class="card-text">
+                Elementi visivamente coinvolgenti che comunicano messaggi chiari
+                e creano forti identità di marca. Combinando sapientemente
+                tipografia, colore e immagini, per costruire progetti di grande
+                impatto e funzionali.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="abotuMeTarget" class="container mt-5 mb-5">
+      <!-- Sezione Titolo -->
+      <div class="about-title-section">
+        <h2 class="about-title">
+          Progettare soluzioni che uniscono funzionalità ed estetica.
+        </h2>
+      </div>
+
+      <!-- Sezione Immagine e Descrizione -->
+      <div class="row about-content-section mt-4">
+        <!-- Immagine sulla sinistra -->
+        <div class="col-md-5 col-12 about-image-section mb-4">
+          <img
+            src="./css/img/ux.svg"
+            alt="Immagine"
+            class="about-image img-fluid"
+          />
+        </div>
+
+        <!-- Testo sulla destra -->
+        <div class="col-md-7 col-12 about-text-section">
+          <h5 class="about-about-me">Su di Me</h5>
+          <p class="about-description">
+            Sono costantemente spinta a risolvere problemi, questo mi ha portata
+            a intraprendere una carriera nel design. La mia esperienza nei ruoli
+            a contatto con i clienti mi ha fornito una preziosa visione della
+            comprensione e dell'anticipazione delle esigenze degli utenti, che
+            ha guidato il mio continuo apprendimento e la mia crescita. Il mio
+            profondo amore per la tecnologia e il design ha aperto la strada al
+            mio percorso in UX/UI Design. In questo ruolo, mi impegno a creare
+            esperienze digitali intuitive e d'impatto. Parlo correntemente
+            l'italiano e l'inglese, e porto creatività, empatia e una mentalità
+            incentrata sull'utente in ogni progetto, con l'obiettivo di fornire
+            soluzioni significative che risuonino davvero con gli utenti.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carousel per desktop (2 slide con 3 card per slide) -->
+    <section
+      id="projectTarget"
+      class="container my-5 carousel-card d-none d-md-block"
+    >
+      <h2 class="about-title text-center mb-4">
+        <span class="recent-title">Progetti</span>
+        <span class="projects-title">Recenti</span>
+      </h2>
+      <div id="cardCarouselDesktop" class="carousel slide carousel-dark">
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#cardCarouselDesktop"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#cardCarouselDesktop"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <!-- Prima slide (3 card) -->
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card">
+                  <img
+                    src="./css/img/Wireframe1.png"
+                    class="card-img-top"
+                    alt="Immagine 1"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Wireframing</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                      ECODREAM, e-commerce di borse e zaini sostenibili.
+                    </h6>
+                    <p class="card-text">
+                      Ho definito le fondamenta della struttura di un sito web
+                      per rendere unica l'esperienza online attraverso la
+                      creazione dello “scheletro” di un sito web.
+                    </p>
+                    <div class="d-flex justify-content-between w-100">
+                      <a
+                      target="_blank"
+                        href="https://www.behance.net/gallery/209730715/Wireframe-1"
+                        class="btn btn-primary rounded-pill flex-grow-1 mx-2"
+                        >Vai alla parte 1</a
+                      >
+                      <a
+                      target="_blank"
+                        href="https://www.behance.net/gallery/209731283/Wireframe-2"
+                        class="btn btn-primary rounded-pill flex-grow-1 mx-2"
+                        >Vai alla parte 2</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card">
+                  <img
+                    src="./css/img/Accessibilità1.png"
+                    class="card-img-top"
+                    alt="Immagine 2"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Accessibilità</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                      ECODREAM, e-commerce di borse e zaini sostenibili.
+                    </h6>
+                    <p class="card-text">
+                      Ho compreso e analizzato come progettare siti web e
+                      applicazioni accessibili alle persone con disabilità
+                      attraverso la ricerca delle esigenze delle persone con
+                      disabilità e l'analisi dell'accessibilità di un sito.
+                    </p>
+                    <div class="d-flex justify-content-between w-100">
+                      <a
+                      target="_blank"
+                        href="https://www.behance.net/gallery/209729827/Accessibilita-1"
+                        class="btn btn-primary rounded-pill flex-grow-1 mx-2"
+                        >Vai alla parte 1</a
+                      >
+                      <a
+                      target="_blank"
+                        href="https://www.behance.net/gallery/209730075/Accessibilita-2"
+                        class="btn btn-primary rounded-pill flex-grow-1 mx-2"
+                        >Vai alla parte 2</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card">
+                  <img
+                    src="./css/img/Grafica.png"
+                    class="card-img-top"
+                    alt="Immagine 3"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Grafica</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                      SUNEE swim conscious
+                    </h6>
+                    <p class="card-text">
+                      Ho ricercato e identificato gli elementi che
+                      caratterizzano l'identità visiva di un marchio in modo che
+                      venga ricordato dalle persone e definito la strategia
+                      visiva e la creazione di grafiche per i social.
+                    </p>
+                    <a
+                    target="_blank"
+                      href="https://www.behance.net/gallery/209670511/Progetto-di-Grafica"
+                      class="btn btn-primary rounded-pill"
+                      class="btn btn-primary rounded-pill"
+                      >Vai al progetto</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Seconda slide (3 card) -->
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card">
+                  <img
+                    src="./css/img/Discovery1.png"
+                    class="card-img-top"
+                    alt="Immagine 4"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Discovery</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                      ECODREAM, e-commerce di borse e zaini sostenibili.
+                    </h6>
+                    <p class="card-text">
+                      Ho scritto un testo che toccasse e commuovesse le persone
+                      attraverso la creazione di un articolo per il web.
+                    </p>
+                    <div class="d-flex justify-content-between w-100">
+                      <a
+                      target="_blank"
+                        href="https://www.behance.net/gallery/209678619/Progetto-di-Discovery-1"
+                        class="btn btn-primary rounded-pill flex-grow-1 mx-2"
+                        >Vai alla parte 1</a
+                      >
+                      <a
+                      target="_blank"
+                        href="https://www.behance.net/gallery/209729573/Discovery-2"
+                        class="btn btn-primary rounded-pill flex-grow-1 mx-2"
+                        >Vai alla parte 2</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card">
+                  <img
+                    src="./css/img/Copywriting.png"
+                    class="card-img-top"
+                    alt="Immagine 5"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">COPYWRITING</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                      Il vestito verde, blog
+                    </h6>
+                    <p class="card-text">
+                      Ho scritto un testo in grado di toccare il cuore delle
+                      persone e farle emozionare tramite la creazione di un
+                      articolo per il web, collaborando con “Il Vestito Verde”.
+                    </p>
+                    <a
+                    target="_blank"
+                      href="https://www.behance.net/gallery/209674263/Progetto-di-Copywriting"
+                      class="btn btn-primary rounded-pill"
+                      >Vai al progetto</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#cardCarouselDesktop"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#cardCarouselDesktop"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Carousel per mobile (6 slide con una card per slide) -->
+    <section id="projectTarget" class="container my-5 carousel-card d-md-none">
+      <h2 class="about-title text-center mb-4">
+        <span class="recent-title">Recent</span>
+        <span class="projects-title">Projects</span>
+      </h2>
+      <div id="cardCarouselMobile" class="carousel slide carousel-dark">
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#cardCarouselMobile"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#cardCarouselMobile"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#cardCarouselMobile"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#cardCarouselMobile"
+            data-bs-slide-to="3"
+            aria-label="Slide 4"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#cardCarouselMobile"
+            data-bs-slide-to="4"
+            aria-label="Slide 5"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#cardCarouselMobile"
+            data-bs-slide-to="5"
+            aria-label="Slide 6"
+          ></button>
+        </div>
+
+        <div class="carousel-inner">
+          <!-- Prima slide (1 card) -->
+          <div class="carousel-item active">
+            <div class="col-12">
+              <div class="card">
+                <img
+                  src="./css/img/Wireframe1.png"
+                  class="card-img-top"
+                  alt="Immagine 1"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Wireframing</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">
+                    ECODREAM, e-commerce di borse e zaini sostenibili.
+                  </h6>
+                  <p class="card-text">
+                    Ho definito le fondamenta della struttura di un sito web per
+                    rendere unica l'esperienza online attraverso la creazione
+                    dello “scheletro” di un sito web.
+                  </p>
+                  <div class="d-flex justify-content-between w-100">
+                    <a
+                    target="_blank"
+                      href="https://www.behance.net/gallery/209730715/Wireframe-1"
+                      class="btn btn-primary rounded-pill flex-grow-1 mx-2"
+                      >Vai alla parte 1</a
+                    >
+                    <a
+                    target="_blank"
+                      href="https://www.behance.net/gallery/209731283/Wireframe-2"
+                      class="btn btn-primary rounded-pill flex-grow-1 mx-2"
+                      >Vai alla parte 2</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Seconda slide (1 card) -->
+          <div class="carousel-item">
+            <div class="col-12">
+              <div class="card">
+                <img
+                  src="./css/img/Accessibilità1.png"
+                  class="card-img-top"
+                  alt="Immagine 2"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Accessibilità</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">
+                    ECODREAM, e-commerce di borse e zaini sostenibili.
+                  </h6>
+                  <p class="card-text">
+                    Ho compreso e analizzato come progettare siti web e
+                    applicazioni accessibili alle persone con disabilità
+                    attraverso la ricerca delle esigenze delle persone con
+                    disabilità e l'analisi dell'accessibilità di un sito.
+                  </p>
+                  <div class="d-flex justify-content-between w-100">
+                    <a
+                    target="_blank"
+                      href="https://www.behance.net/gallery/209729827/Accessibilita-1"
+                      class="btn btn-primary rounded-pill flex-grow-1 mx-2"
+                      >Vai alla parte 1</a
+                    >
+                    <a
+                    target="_blank"
+                      href="https://www.behance.net/gallery/209730075/Accessibilita-2"
+                      class="btn btn-primary rounded-pill flex-grow-1 mx-2"
+                      >Vai alla parte 2</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Terza slide (1 card) -->
+          <div class="carousel-item">
+            <div class="col-12">
+              <div class="card">
+                <img
+                  src="./css/img/Grafica.png"
+                  class="card-img-top"
+                  alt="Immagine 3"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Grafica</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">
+                    SUNEE swim conscious
+                  </h6>
+                  <p class="card-text">
+                    Ho ricercato e identificato gli elementi che caratterizzano
+                    l'identità visiva di un marchio in modo che venga ricordato
+                    dalle persone e definito la strategia visiva e la creazione
+                    di grafiche per i social.
+                  </p>
+                  <a
+                  target="_blank"
+                    href="https://www.behance.net/gallery/209670511/Progetto-di-Grafica"
+                    class="btn btn-primary rounded-pill"
+                    class="btn btn-primary rounded-pill"
+                    >Vai al progetto</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Altre slide simili per 4, 5, 6 -->
+          <div class="carousel-item">
+            <div class="col-12">
+              <div class="card">
+                <img
+                  src="./css/img/Discovery1.png"
+                  class="card-img-top"
+                  alt="Immagine 4"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Discovery</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">
+                    ECODREAM, e-commerce di borse e zaini sostenibili.
+                  </h6>
+                  <p class="card-text">
+                    Ho scritto un testo che toccasse e commuovesse le persone
+                    attraverso la creazione di un articolo per il web.
+                  </p>
+                  <div class="d-flex justify-content-between w-100">
+                    <a
+                    target="_blank"
+                      href="https://www.behance.net/gallery/209678619/Progetto-di-Discovery-1"
+                      class="btn btn-primary rounded-pill flex-grow-1 mx-2"
+                      >Vai alla parte 1</a
+                    >
+                    <a
+                    target="_blank"
+                      href="https://www.behance.net/gallery/209729573/Discovery-2"
+                      class="btn btn-primary rounded-pill flex-grow-1 mx-2"
+                      >Vai alla parte 2</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="col-12">
+              <div class="card">
+                <img
+                  src="./css/img/Copywriting.png"
+                  class="card-img-top"
+                  alt="Immagine 5"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">COPYWRITING</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">
+                    Il vestito verde, blog
+                  </h6>
+                  <p class="card-text">
+                    Ho scritto un testo in grado di toccare il cuore delle
+                    persone e farle emozionare tramite la creazione di un
+                    articolo per il web, collaborando con “Il Vestito Verde”.
+                  </p>
+                  <a
+                  target="_blank"
+                    href="https://www.behance.net/gallery/209674263/Progetto-di-Copywriting"
+                    class="btn btn-primary rounded-pill"
+                    >Vai al progetto</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#cardCarouselMobile"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#cardCarouselMobile"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+
+    <!--Timeline-->
+    
+    <section class="timeline-container" id="percorsoTarget" style="padding-bottom: 40px; padding-top: 40px;">
+      <div class="container">
+        <h2 class="about-title text-center mb-4">
+          <span class="recent-title">Il Mio </span>
+          <span class="projects-title">Percorso</span>
+        </h2>
+        <div class="timeline" style=" display: flex; flex-direction: row; justify-content: space-between;  margin: 0;padding: 0; height: 100%; flex-wrap: wrap;">
+          <div class="timeline-item row " style="padding: 0;margin: 0; height: 100%;">
+            <div class="timeline-date ">
+              <span class="timeline-heading">Esperienze lavorative</span>
+            </div>
+            <div class="timeline-content "  >
+              <div class="timeline-card p-3 shadow-sm ">
+                <div class="container">
+                  <div class="row">
+                      <!-- Primo div -->
+                      <div class="col-12 col-md-6 mb-4">
+                          <span>Office Assistant - 2020 / 2022</span>
+                          <p class="timeline-description mt-2">
+                              Assistenza e Accoglienza Clienti<br/>
+                              Servizi di Segreteria
+                          </p>
+                      </div>
+                      
+                      <!-- Secondo div -->
+                      <div class="col-12 col-md-6 mb-4">
+                          <span>Fotografa - 2014 / 2018</span>
+                          <p class="timeline-description mt-2">
+                              Wedding Photographer<br/>
+                              Studio Photographer
+                          </p>
+                      </div>
+                  </div>
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="timeline-date col-md-3 text-md-start mb-2 mb-md-0 mt-4">
+            <span class="timeline-heading">Studi</span>
+          </div>
+
+
+           <div class="timeline-content ">
+              <div class="timeline-card p-3 shadow-sm">
+                <div class="container">
+                  <div class="row">
+                      <!-- Primo div -->
+                      <div class="col-12 col-md-6 mb-4 d-flex flex-column " style="row-gap: 8px;" >
+                          <span>Istituto Superiore “Archimede” - IPCT 2010/15<br/></span>
+                          <span>Fastweb Digital Academy 2018<br/></span>
+                          <span>Start2Impact University 2023/IN CORSO</span>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+            <div class="timeline-date col-md-3 text-md-start mb-2 mb-md-0 mt-4">
+            <span class="timeline-heading">I miei interessi</span>
+          </div>
+
+
+           <div class="timeline-content ">
+              <div class="timeline-card p-3 shadow-sm">
+                <div class="container">
+                  <div class="row">
+                      <!-- Primo div -->
+                      <div   style="display: flex; row-gap: 8px; justify-content: space-between;  flex-wrap: wrap;" >
+                        <div class="icon-container" data-title="Fotografia">
+                        <svg  xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M2 19V9a2 2 0 0 1 2-2h.5a2 2 0 0 0 1.6-.8l2.22-2.96A.6.6 0 0 1 8.8 3h6.4a.6.6 0 0 1 .48.24L17.9 6.2a2 2 0 0 0 1.6.8h.5a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2"/><path d="M12 17a4 4 0 1 0 0-8a4 4 0 0 0 0 8"/></g></svg>
+                        </div>
+                        <div class="icon-container" data-title="Grafica">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32" d="M430.11 347.9c-6.6-6.1-16.3-7.6-24.6-9c-11.5-1.9-15.9-4-22.6-10c-14.3-12.7-14.3-31.1 0-43.8l30.3-26.9c46.4-41 46.4-108.2 0-149.2c-34.2-30.1-80.1-45-127.8-45c-55.7 0-113.9 20.3-158.8 60.1c-83.5 73.8-83.5 194.7 0 268.5c41.5 36.7 97.5 55 152.9 55.4h1.7c55.4 0 110-17.9 148.8-52.4c14.4-12.7 11.99-36.6.1-47.7Z"/><circle cx="144" cy="208" r="32" fill="currentColor"/><circle cx="152" cy="311" r="32" fill="currentColor"/><circle cx="224" cy="144" r="32" fill="currentColor"/><circle cx="256" cy="367" r="48" fill="currentColor"/><circle cx="328" cy="144" r="32" fill="currentColor"/></svg>  
+                      </div>
+                      <div class="icon-container" data-title="Lettura">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 24 24"><path fill="currentColor" d="M8.25 5a.75.75 0 0 0-.75.75v4c0 .414.336.75.75.75h7.5a.75.75 0 0 0 .75-.75v-4a.75.75 0 0 0-.75-.75zM9 9V6.5h6V9z"/><path fill="currentColor" d="M6.75 2A2.25 2.25 0 0 0 4.5 4.25V19a3 3 0 0 0 3 3h11.25a.75.75 0 0 0 0-1.5H18v-3h.75a.75.75 0 0 0 .75-.75V4.25A2.25 2.25 0 0 0 17.25 2zM18 16H7.5c-.546 0-1.059.146-1.5.401V4.25a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 .75.75zm-1.5 1.5v3h-9a1.5 1.5 0 0 1 0-3z"/></svg> 
+                      </div>
+                      <div class="icon-container" data-title="Computer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2 21h15m4 0h1"/><path d="M2 16.4V3.6a.6.6 0 0 1 .6-.6h18.8a.6.6 0 0 1 .6.6v12.8a.6.6 0 0 1-.6.6H2.6a.6.6 0 0 1-.6-.6Z"/></g></svg>
+                      </div>
+                      <div class="icon-container" data-title="Natura"> 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 24 24"><path fill="currentColor" d="m18 8.462l-1.03.93q-.236.23-.566.23t-.623-.18q-.235-.16-.322-.46q-.086-.3.025-.678l.477-1.558l-1.08-.654q-.285-.167-.4-.467t-.046-.61q.067-.29.336-.46t.629-.17h1.308l.377-1.258q.092-.321.349-.532q.257-.21.566-.21t.566.21t.35.532l.376 1.258H20.6q.34 0 .607.17t.359.46q.117.316.009.626q-.108.309-.367.451l-1.17.654l.478 1.52q.111.359.034.681t-.33.495q-.28.198-.617.189t-.572-.239zm0-1.424q.387 0 .655-.268t.268-.655t-.268-.655T18 5.192t-.655.269t-.268.655t.268.654t.655.27m-5.161 10.707q.459 1.193-.328 2.223T10.346 21q-.671 0-1.255-.387q-.583-.386-.914-1.048q-1.594.07-2.697-1.024q-1.103-1.093-1.046-2.68q-.673-.309-1.053-.96T3 13.435q0-1.295 1.157-2.001t2.405-.195l1.319.534q.327-.91 1.085-1.484q.757-.573 1.707-.623V7.653h.885V9.71q1.079.122 1.842.882t.939 1.926h2.045v.885h-2.011q-.05.93-.638 1.688t-1.496 1.104zM6.135 15.17q.915 0 1.816-.335q.901-.334 1.991-1.088L6.29 12.188q-.841-.357-1.565.042T4 13.458q0 .746.598 1.228q.598.483 1.537.483M10.346 20q.837 0 1.34-.601t.226-1.287l-1.543-3.939q-.782 1.03-1.16 1.956t-.378 1.786q0 .922.422 1.503q.422.582 1.093.582m1.516-4.742q.673-.289 1.092-.884t.419-1.315q0-.992-.679-1.696t-1.665-.704q-.777 0-1.379.42t-.82 1.098l2.182.938z"/></svg>
+                      </div>
+                      <div class="icon-container" data-title="Film">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5" d="m15 9l2-6M7 9l2-6M1 9h22M3.4 3h17.2A2.4 2.4 0 0 1 23 5.4v13.2a2.4 2.4 0 0 1-2.4 2.4H3.4A2.4 2.4 0 0 1 1 18.6V5.4A2.4 2.4 0 0 1 3.4 3"/></svg>
+                      </div>
+                      <div class="icon-container" data-title="Cucina">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 24 24"><path fill="currentColor" d="m4.52 20.462l-1.54-1.539h18l-1.538 1.539zM4 17.73q.17-.373.429-.687q.26-.313.571-.605v-7.9H4v-.885h1v-.942H4v-.885h1v-.942H4V4h6.192q.667 0 1.141.475t.475 1.14v.212H20v.885h-8.192v.205q0 .677-.475 1.15q-.474.472-1.14.472h-1.81v6.83q.581.07 1.143.285t1.015.588q.266-1.528 1.46-2.52q1.194-.991 2.746-.991q1.79 0 3.022 1.258T19 17.03v.7zM8.385 5.827h2.423V5.5q0-.27-.173-.442q-.173-.173-.443-.173H8.385zm0 1.827h1.807q.27 0 .442-.173q.174-.173.174-.443v-.327H8.384zm-2.5-1.827H7.5v-.942H5.884zm0 1.827H7.5v-.942H5.884zm0 8.177q.384-.202.785-.313t.83-.167V8.54H5.884z"/></svg>
+                      </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+          <!-- Aggiungi altre voci del percorso formativo qui -->
+        </div>
+
+        
+        <div class="timeline-content2 "style="  height:'100%' ;">
+          <div class="timeline-date col-md-3 text-md-start mb-2 mb-md-0" style="padding-bottom: 16px;">
+            <span class="timeline-heading">I miei interessi</span>
+          </div>
+          <div class="timeline-card  shadow-sm" style="height:fit-content ;"> 
+            
+            <div class="container"  >
+              
+              <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; ">
+                <div style="width: 50%;   display: flex; flex-direction: column; align-items: center;justify-content: center;">
+
+                  <!-- Primo div -->
+                  <div >
+                      <span>SOFT SKILLS</span>
+                      <p class="timeline-description mt-2" style="line-height: 2;">
+                          Risoluzione dei problemi<br/>
+                          Comprensione dei principi di accessibilità<br/>
+                          Curiosità e apprendimento continuo<br/>
+                          Flessibilità<br/>
+                          Comunicazione e cooperazione
+                      </p>
+                  </div>
+                  
+                  <!-- Secondo div -->
+                  <div >
+                      <span>HARD SKILLS</span>
+                      <p class="timeline-description mt-2" style="line-height: 2;">
+                        Conoscenza dei principi del design<br/>
+                        Conoscenza dei principi di interazione<br/>
+                        Comprensione dei principi di accessibilità<br/>
+                        Prototipazione e wireframing<br/>
+                        Ricerca sull'utente<br/>
+                        Conoscenza di base di HTML/CSS
+                      </p>
+                  </div>
+              
+                </div>
+
+                <div class="iconPack" >
+                  <div class="icon-container2" data-title="Photoshop">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 128 128"><path fill="#001e36" d="M22.667 1.6h82.666C117.867 1.6 128 11.733 128 24.267v79.466c0 12.534-10.133 22.667-22.667 22.667H22.667C10.133 126.4 0 116.267 0 103.733V24.267C0 11.733 10.133 1.6 22.667 1.6"/><path fill="#31a8ff" d="M45.867 33.333c-1.6 0-3.2 0-4.853.054c-1.654.053-3.201.053-4.641.107c-1.44.053-2.773.053-4.053.106c-1.227.053-2.08.053-2.987.053c-.373 0-.533.213-.533.587v54.88c0 .48.213.694.64.694h10.347c.373-.054.64-.374.586-.747v-17.12c1.013 0 1.76 0 2.294.053c.533.053 1.386.053 2.666.053c4.374 0 8.374-.48 12-1.813c3.467-1.28 6.454-3.52 8.587-6.507q3.2-4.48 3.2-11.36c0-2.4-.426-4.693-1.226-6.933A17 17 0 0 0 64 39.36a19.05 19.05 0 0 0-7.147-4.374c-2.987-1.12-6.613-1.653-10.986-1.653m1.19 10.505c1.9.036 3.75.368 5.476 1.068c1.547.587 2.827 1.654 3.734 3.04a8.8 8.8 0 0 1 1.227 4.748c0 2.346-.534 4.16-1.654 5.493c-1.174 1.333-2.667 2.347-4.373 2.827c-1.974.64-4.054.959-6.134.959h-2.827c-.64 0-1.332-.053-2.079-.106v-17.92c.373-.054 1.12-.107 2.187-.053c1.013-.054 2.239-.054 3.626-.054q.41-.01.817-.002m44.73 2.723c-3.787 0-6.934.586-9.44 1.866c-2.293 1.067-4.267 2.773-5.6 4.906c-1.173 1.974-1.814 4.16-1.814 6.454a11.45 11.45 0 0 0 1.227 5.44a13.8 13.8 0 0 0 4.054 4.533a32.6 32.6 0 0 0 7.573 3.84c2.613 1.013 4.373 1.813 5.227 2.506c.853.694 1.28 1.387 1.28 2.134c0 .96-.587 1.867-1.44 2.24c-.96.48-2.4.747-4.427.747c-2.133 0-4.267-.267-6.294-.8a22.8 22.8 0 0 1-6.613-2.613c-.16-.107-.32-.16-.48-.053c-.16.106-.213.319-.213.479v9.28c-.053.427.213.8.587 1.013a21.5 21.5 0 0 0 5.44 1.707c2.4.48 4.799.693 7.252.693c3.84 0 7.041-.586 9.654-1.706c2.4-.96 4.48-2.613 5.973-4.747a12.4 12.4 0 0 0 2.08-7.093a11.5 11.5 0 0 0-1.226-5.493c-1.014-1.814-2.454-3.307-4.214-4.427a38.6 38.6 0 0 0-8.213-3.894a49 49 0 0 1-3.787-1.76c-.693-.373-1.333-.853-1.813-1.44c-.32-.427-.533-.906-.533-1.386s.16-1.013.426-1.44c.374-.533.96-.907 1.653-1.067c1.014-.266 2.134-.427 3.2-.374c2.027 0 4 .267 5.974.694c1.814.373 3.52.96 5.12 1.814c.213.106.48.106.96 0a.66.66 0 0 0 .267-.534v-8.693c0-.214-.054-.427-.107-.64c-.107-.213-.32-.427-.533-.48A18.8 18.8 0 0 0 98.4 47.04a46 46 0 0 0-6.613-.48z"/></svg>
+                </div>
+                <div class="icon-container2" data-title="Illustrator">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 256 256"><g fill="none"><rect width="256" height="256" fill="#300" rx="60"/><path fill="#ff9a00" d="M123.733 152.333h-39.68L75.946 177.4c-.213.96-1.066 1.6-2.026 1.493H53.866c-1.173 0-1.493-.64-1.173-1.92l34.347-98.88c.32-1.066.64-2.24 1.066-3.52c.427-2.24.64-4.586.64-6.933c-.106-.533.32-1.067.854-1.173h27.626c.854 0 1.28.32 1.387.853l38.933 109.867c.32 1.173 0 1.706-1.066 1.706h-22.294c-.746.107-1.493-.426-1.706-1.173zM90.24 130.68h27.093c-.64-2.24-1.493-4.907-2.453-7.68c-.96-2.88-1.92-5.973-2.88-9.173c-1.067-3.307-2.027-6.507-3.094-9.814c-1.066-3.306-2.026-6.4-2.88-9.493c-.853-2.986-1.6-5.76-2.346-8.32h-.214c-.96 4.587-2.133 9.174-3.626 13.76c-1.6 5.12-3.2 10.453-4.907 15.787a209 209 0 0 1-4.693 14.933m91.093-45.547c-3.52.107-6.933-1.28-9.493-3.733c-2.453-2.667-3.733-6.187-3.627-9.813c-.106-3.627 1.28-7.04 3.84-9.494s5.974-3.733 9.494-3.733c4.16 0 7.36 1.28 9.706 3.733a13.46 13.46 0 0 1 3.52 9.494c.107 3.626-1.173 7.146-3.733 9.813c-2.453 2.56-6.08 3.947-9.707 3.733m-11.946 92.587V95.587c0-1.067.426-1.494 1.386-1.494h21.12c.96 0 1.387.534 1.387 1.494v82.133c0 1.173-.427 1.707-1.387 1.707h-20.906c-1.067 0-1.6-.64-1.6-1.707"/></g></svg>
+                </div>
+                <div class="icon-container2" data-title="Indesign">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="49.16px" height="48px" viewBox="0 0 256 250"><rect width="256" height="249.6" fill="#49021f" rx="42.5"/><path fill="#f36" d="M92.969 65.297v109.394q0 1.718-1.546 1.718h-20.78q-1.376 0-1.373-1.718V65.297q0-1.373 1.545-1.374h20.78a1.215 1.215 0 0 1 1.385 1.233zm62.586 112.818l-1.106.011a53.2 53.2 0 0 1-22.926-4.808a36.45 36.45 0 0 1-16.057-14.512q-5.698-9.464-5.836-23.59l-.003-.71a44.84 44.84 0 0 1 5.84-22.497a42.87 42.87 0 0 1 16.443-16.183l.558-.304q11.16-6.182 26.962-6.182l.222.001l.493.011l.558.022l.623.032l.687.043l.751.055l1.697.139l.464.04v-33.83q0-1.201 1.03-1.203h21.639a.91.91 0 0 1 1.03 1.03v101.495a85 85 0 0 0 .258 6.354l.162 2.214l.143 2.061l.124 1.907a1.775 1.775 0 0 1-1.03 1.718a85.2 85.2 0 0 1-17.345 5.151a93 93 0 0 1-15.38 1.535m9.37-21.284v-46.883a17 17 0 0 0-2.833-.515a34 34 0 0 0-3.521-.172c-4.168-.041-8.286.9-12.021 2.748a23.5 23.5 0 0 0-9.016 7.9q-3.522 5.151-3.521 13.567a30.3 30.3 0 0 0 1.803 10.99a20.9 20.9 0 0 0 4.809 7.557a18.3 18.3 0 0 0 7.213 4.293a28.3 28.3 0 0 0 8.844 1.375q2.403 0 4.465-.173a18.4 18.4 0 0 0 3.248-.54z"/></svg>
+                </div>
+                <div class="icon-container2" data-title="Figma">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 128 128"><path fill="#0acf83" d="M45.5 129c11.9 0 21.5-9.6 21.5-21.5V86H45.5C33.6 86 24 95.6 24 107.5S33.6 129 45.5 129m0 0"/><path fill="#a259ff" d="M24 64.5C24 52.6 33.6 43 45.5 43H67v43H45.5C33.6 86 24 76.4 24 64.5m0 0"/><path fill="#f24e1e" d="M24 21.5C24 9.6 33.6 0 45.5 0H67v43H45.5C33.6 43 24 33.4 24 21.5m0 0"/><path fill="#ff7262" d="M67 0h21.5C100.4 0 110 9.6 110 21.5S100.4 43 88.5 43H67zm0 0"/><path fill="#1abcfe" d="M110 64.5c0 11.9-9.6 21.5-21.5 21.5S67 76.4 67 64.5S76.6 43 88.5 43S110 52.6 110 64.5m0 0"/></svg>
+                </div>
+                <div class="icon-container2" data-title="HTML">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 256 256"><g fill="none"><rect width="256" height="256" fill="#e14e1d" rx="60"/><path fill="#fff" d="m48 38l8.61 96.593h110.71l-3.715 41.43l-35.646 9.638l-35.579-9.624l-2.379-26.602H57.94l4.585 51.281l65.427 18.172l65.51-18.172l8.783-98.061H85.824l-2.923-32.71h122.238L208 38z"/><path fill="#ebebeb" d="M128 38H48l8.61 96.593H128v-31.938H85.824l-2.923-32.71H128zm0 147.647l-.041.014l-35.579-9.624l-2.379-26.602H57.94l4.585 51.281l65.427 18.172l.049-.014z"/></g></svg>
+                </div>
+                <div class="icon-container2" data-title="CSS">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 256 256"><g fill="none"><rect width="256" height="256" fill="#0277bd" rx="60"/><path fill="#ebebeb" d="m53.753 102.651l2.862 31.942h71.481v-31.942zM128.095 38H48l2.904 31.942h77.191zm0 180.841v-33.233l-.14.037l-35.574-9.605l-2.274-25.476H58.042l4.475 50.154l65.431 18.164z"/><path fill="#fff" d="m167.318 134.593l-3.708 41.426l-35.625 9.616v33.231l65.483-18.148l.48-5.397l7.506-84.092l.779-8.578L208 38h-80.015v31.942h45.009l-2.906 32.709h-42.103v31.942z"/></g></svg>
+                </div>
+                <div class="icon-container2" data-title="Javascript">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 256 256"><g fill="none"><rect width="256" height="256" fill="#f0db4f" rx="60"/><path fill="#323330" d="m67.312 213.932l19.59-11.856c3.78 6.701 7.218 12.371 15.465 12.371c7.905 0 12.889-3.092 12.889-15.12v-81.798h24.058v82.138c0 24.917-14.606 36.259-35.916 36.259c-19.245 0-30.416-9.967-36.087-21.996m85.07-2.576l19.588-11.341c5.157 8.421 11.859 14.607 23.715 14.607c9.969 0 16.325-4.984 16.325-11.858c0-8.248-6.53-11.17-17.528-15.98l-6.013-2.579c-17.357-7.388-28.871-16.668-28.871-36.258c0-18.044 13.748-31.792 35.229-31.792c15.294 0 26.292 5.328 34.196 19.247l-18.731 12.029c-4.125-7.389-8.591-10.31-15.465-10.31c-7.046 0-11.514 4.468-11.514 10.31c0 7.217 4.468 10.139 14.778 14.608l6.014 2.577c20.449 8.765 31.963 17.699 31.963 37.804c0 21.654-17.012 33.51-39.867 33.51c-22.339 0-36.774-10.654-43.819-24.574"/></g></svg>
+                </div>
+                <div class="icon-container2" data-title="VsCode">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="48.38px" height="48px" viewBox="0 0 256 254"><defs><linearGradient id="logosVisualStudioCode0" x1="50%" x2="50%" y1="0%" y2="100%"><stop offset="0%" stop-color="#fff"/><stop offset="100%" stop-color="#fff" stop-opacity="0"/></linearGradient><path id="logosVisualStudioCode1" d="M180.828 252.605a15.87 15.87 0 0 0 12.65-.486l52.501-25.262a15.94 15.94 0 0 0 9.025-14.364V41.197a15.94 15.94 0 0 0-9.025-14.363l-52.5-25.263a15.88 15.88 0 0 0-18.115 3.084L74.857 96.35l-43.78-33.232a10.614 10.614 0 0 0-13.56.603L3.476 76.494c-4.63 4.211-4.635 11.495-.012 15.713l37.967 34.638l-37.967 34.637c-4.623 4.219-4.618 11.502.012 15.714l14.041 12.772a10.614 10.614 0 0 0 13.56.604l43.78-33.233l100.507 91.695a15.85 15.85 0 0 0 5.464 3.571m10.464-183.649l-76.262 57.889l76.262 57.888z"/></defs><mask id="logosVisualStudioCode2" fill="#fff"><use href="#logosVisualStudioCode1"/></mask><path fill="#0065a9" d="M246.135 26.873L193.593 1.575a15.885 15.885 0 0 0-18.123 3.08L3.466 161.482c-4.626 4.219-4.62 11.502.012 15.714l14.05 12.772a10.625 10.625 0 0 0 13.569.604L238.229 33.436c6.949-5.271 16.93-.315 16.93 8.407v-.61a15.94 15.94 0 0 0-9.024-14.36" mask="url(#logosVisualStudioCode2)"/><path fill="#007acc" d="m246.135 226.816l-52.542 25.298a15.89 15.89 0 0 1-18.123-3.08L3.466 92.207c-4.626-4.218-4.62-11.502.012-15.713l14.05-12.773a10.625 10.625 0 0 1 13.569-.603l207.132 157.135c6.949 5.271 16.93.315 16.93-8.408v.611a15.94 15.94 0 0 1-9.024 14.36" mask="url(#logosVisualStudioCode2)"/><path fill="#1f9cf0" d="M193.428 252.134a15.89 15.89 0 0 1-18.125-3.083c5.881 5.88 15.938 1.715 15.938-6.603V11.273c0-8.318-10.057-12.483-15.938-6.602a15.89 15.89 0 0 1 18.125-3.084l52.533 25.263a15.94 15.94 0 0 1 9.03 14.363V212.51c0 6.125-3.51 11.709-9.03 14.363z" mask="url(#logosVisualStudioCode2)"/><path fill="url(#logosVisualStudioCode0)" fill-opacity="0.25" d="M180.828 252.605a15.87 15.87 0 0 0 12.65-.486l52.5-25.263a15.94 15.94 0 0 0 9.026-14.363V41.197a15.94 15.94 0 0 0-9.025-14.363L193.477 1.57a15.88 15.88 0 0 0-18.114 3.084L74.857 96.35l-43.78-33.232a10.614 10.614 0 0 0-13.56.603L3.476 76.494c-4.63 4.211-4.635 11.495-.012 15.713l37.967 34.638l-37.967 34.637c-4.623 4.219-4.618 11.502.012 15.714l14.041 12.772a10.614 10.614 0 0 0 13.56.604l43.78-33.233l100.506 91.695a15.9 15.9 0 0 0 5.465 3.571m10.464-183.65l-76.262 57.89l76.262 57.888z" mask="url(#logosVisualStudioCode2)"/></svg>
+                </div>
+                </div>
+
+              </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+  
+
+    <!--Footer-->
+    <footer class="about-footer py-5">
+      <div class="container text-center">
+        <!-- Claim -->
+     
+        
+        
+        <h1 class="about-claim">Ti piace ciò che hai visto?</h1>
+        <h1 class="about-claim">Seguimi sui social!</h1>
+
+        <!-- Social Icons -->
+        <div class="about-social-icons my-4">
+          <a
+            href="https://www.linkedin.com/in/caccamocarola?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+            target="_blank"
+            class="about-social-link mx-2"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/carolac_uxui/profilecard/?igsh=MXF4ZXRuaTlldnVtNA=="
+            target="_blank"
+            class="about-social-link mx-2"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+
+        <!-- Divider -->
+        <hr class="about-divider my-4" />
+
+        <!-- Footer Bottom Row -->
+        <div class="row">
+          <div class="col-12 d-flex justify-content-between align-items-center">
+            <div class="text-start">
+              <a href="#" class="about-footer-text about-nav-link"
+                >Portfolio.</a
+              >
+            </div>
+           
+            <div class="text-center" >
+              <a href="#skillsTarget" class="about-nav-link mx-2">Skills</a>
+              <a href="#abotuMeTarget" class="about-nav-link mx-2">Su di Me</a>
+              <a href="#projectTarget" class="about-nav-link mx-2">Progetti</a>
+              <a href="#percorsoTarget" class="about-nav-link mx-2 "">Percorso</a>
+            </div>
+            <div class="text-end">
+              <a href="/form.html" class="about-footer-text about-nav-link"
+                >Contact me</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
-</body>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/scripts.js"></script>
+  </body>
 </html>

@@ -4,8 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio personale</title>
-    <link rel="icon" type="image/svg+xml" href="./css/img/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="./assets/img/favicon.ico" />
 
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Portfolio Carola Caccamo" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://coralinedjones.github.io/carola-uxui-portfolio/" />
+    <meta property="og:image" content="./assets/img/CopertinaOPG.png" />
+    <meta property="og:description" content="Welcome to my personal portfolio website. Discover my work, projects, and experience." />
+    <meta property="og:site_name" content="Portfolio Carola Caccamo" />
+
+    
     <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
@@ -26,94 +35,15 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="css/styles.css" />
-    <!-- Navbar CSS -->
-    <link rel="stylesheet" href="css/navbar.css" />
-    <!-- Hero CSS -->
-    <link rel="stylesheet" href="css/hero.css" />
-    <!-- Section Skills-->
-    <link rel="stylesheet" href="css/skills.css" />
-    <!-- Section AboutMe-->
-    <link rel="stylesheet" href="css/aboutme.css" />
-    <!-- Section Carousel-->
-    <link rel="stylesheet" href="css/carousel.css" />
-    <!-- Section Footer-->
-    <link rel="stylesheet" href="css/footer.css" />
-    <!-- Section Timeline-->
-    <link rel="stylesheet" href="css/timeline.css" />
-  </head>
-  <style>
-    /* Stile di base per le icone */
-    .icon-container {
-      position: relative;
-      display: inline-block;
-      width: 48px;
-      height: 48px;
-      margin: 8px;
-    }
+    <link rel="stylesheet" href="./assets/css/main.css"/>
+</head>
 
-    /* Stile del tooltip */
-    .icon-container::after {
-      content: attr(data-title);
-      position: absolute;
-      bottom: 120%; /* Posiziona sopra l'icona */
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #333;
-      color: #fff;
-      padding: 6px;
-      border-radius: 4px;
-      font-size: 12px;
-      white-space: nowrap;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.2s ease-in-out;
-      pointer-events: none;
-    }
 
-    /* Mostra il tooltip al passaggio del mouse */
-    .icon-container:hover::after {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .icon-container2 {
-      position: relative;
-      display: inline-block;
-      width: 48px;
-      height: 48px;
-    }
-
-    /* Stile del tooltip */
-    .icon-container2::after {
-      content: attr(data-title);
-      position: absolute;
-      bottom: 120%; /* Posiziona sopra l'icona */
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #333;
-      color: #fff;
-      padding: 6px;
-      border-radius: 4px;
-      font-size: 12px;
-      white-space: nowrap;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.2s ease-in-out;
-      pointer-events: none;
-    }
-
-    /* Mostra il tooltip al passaggio del mouse */
-    .icon-container2:hover::after {
-      opacity: 1;
-      visibility: visible;
-    }
-  </style>
   <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg sticky-navbar">
       <div class="container">
-        <a class="navbar-brand fw-bold" href="#"><img alt="logo" src="./css/img/favicon.ico"></a>
+        <a class="navbar-brand fw-bold" href="#"><img alt="logo" src="./assets/img/favicon.ico"></a>
         <button
           class="navbar-toggler"
           type="button"
@@ -150,14 +80,14 @@
     <section class="container hero">
       <div class="box">
         <div class="col-lg-6">
-          <h1 class="display-4 heroText" >
+          <h2 class="display-4 heroText" >
             Progettazione di interfacce intuitive che connettano e ispirino
-          </h1>
+          </h2>
           <div class="buttonBox">
             <a href="form.html" class="btn btn-primary rounded-pill"
               >Contattami</a
             >
-            <a href="./css/cv-CaccamoCarola.pdf" download="cv-CaccamoCarola.pdf" class="btn btn-outline-primary rounded-pill"
+            <a href="./assets/files/cv-CaccamoCarola.pdf" download="cv-CaccamoCarola.pdf" class="btn btn-outline-primary rounded-pill"
               >Scarica CV</a
             >
           </div>
@@ -165,7 +95,7 @@
         </div>
         <div class="col-lg-6 text-center imgBox">
           <img
-            src="./css/img/hero-image.svg"
+            src="./assets/img/hero-image.svg"
             alt="Immagine Hero"
             class="img-fluid"
           />
@@ -175,11 +105,11 @@
 
     <section id="skillsTarget" class="claim-section text-center">
       <div class="container">
-        <h1 class="claim-text">
+        <h2 class="claim-text">
           Creazione di esperienze digitali
           <span class="intuitive">omogenee </span> <br />mirate a coinvolgere e
           <span class="delight">ispirare </span>gli utenti.
-        </h1>
+        </h2>
       </div>
     </section>
 
@@ -258,7 +188,7 @@
         <!-- Immagine sulla sinistra -->
         <div class="col-md-5 col-12 about-image-section mb-4">
           <img
-            src="./css/img/ux.svg"
+            src="./assets/img/ux.svg"
             alt="Immagine"
             class="about-image img-fluid"
           />
@@ -317,7 +247,7 @@
               <div class="col-md-4">
                 <div class="card">
                   <img
-                    src="./css/img/Wireframe1.png"
+                    src="./assets/img/Wireframe1.png"
                     class="card-img-top"
                     alt="Immagine 1"
                   />
@@ -336,12 +266,14 @@
                       target="_blank"
                         href="https://www.behance.net/gallery/209730715/Wireframe-1"
                         class="btn btn-primary rounded-pill flex-grow-1 mx-2"
+                        rel="noopener"
                         >Vai alla parte 1</a
                       >
                       <a
                       target="_blank"
                         href="https://www.behance.net/gallery/209731283/Wireframe-2"
                         class="btn btn-primary rounded-pill flex-grow-1 mx-2"
+                        rel="noopener"
                         >Vai alla parte 2</a
                       >
                     </div>
@@ -351,7 +283,7 @@
               <div class="col-md-4">
                 <div class="card">
                   <img
-                    src="./css/img/Accessibilità1.png"
+                    src="./assets/img/Accessibilità1.png"
                     class="card-img-top"
                     alt="Immagine 2"
                   />
@@ -371,12 +303,14 @@
                       target="_blank"
                         href="https://www.behance.net/gallery/209729827/Accessibilita-1"
                         class="btn btn-primary rounded-pill flex-grow-1 mx-2"
+                        rel="noopener"
                         >Vai alla parte 1</a
                       >
                       <a
                       target="_blank"
                         href="https://www.behance.net/gallery/209730075/Accessibilita-2"
                         class="btn btn-primary rounded-pill flex-grow-1 mx-2"
+                        rel="noopener"
                         >Vai alla parte 2</a
                       >
                     </div>
@@ -386,7 +320,7 @@
               <div class="col-md-4">
                 <div class="card">
                   <img
-                    src="./css/img/Grafica.png"
+                    src="./assets/img/Grafica.png"
                     class="card-img-top"
                     alt="Immagine 3"
                   />
@@ -405,7 +339,7 @@
                     target="_blank"
                       href="https://www.behance.net/gallery/209670511/Progetto-di-Grafica"
                       class="btn btn-primary rounded-pill"
-                      class="btn btn-primary rounded-pill"
+                      rel="noopener"
                       >Vai al progetto</a
                     >
                   </div>
@@ -419,7 +353,7 @@
               <div class="col-md-4">
                 <div class="card">
                   <img
-                    src="./css/img/Discovery1.png"
+                    src="./assets/img/Discovery1.png"
                     class="card-img-top"
                     alt="Immagine 4"
                   />
@@ -437,12 +371,14 @@
                       target="_blank"
                         href="https://www.behance.net/gallery/209678619/Progetto-di-Discovery-1"
                         class="btn btn-primary rounded-pill flex-grow-1 mx-2"
+                        rel="noopener"
                         >Vai alla parte 1</a
                       >
                       <a
                       target="_blank"
                         href="https://www.behance.net/gallery/209729573/Discovery-2"
                         class="btn btn-primary rounded-pill flex-grow-1 mx-2"
+                        rel="noopener"
                         >Vai alla parte 2</a
                       >
                     </div>
@@ -452,7 +388,7 @@
               <div class="col-md-4">
                 <div class="card">
                   <img
-                    src="./css/img/Copywriting.png"
+                    src="./assets/img/Copywriting.png"
                     class="card-img-top"
                     alt="Immagine 5"
                   />
@@ -470,6 +406,7 @@
                     target="_blank"
                       href="https://www.behance.net/gallery/209674263/Progetto-di-Copywriting"
                       class="btn btn-primary rounded-pill"
+                      rel="noopener"
                       >Vai al progetto</a
                     >
                   </div>
@@ -553,7 +490,7 @@
             <div class="col-12">
               <div class="card">
                 <img
-                  src="./css/img/Wireframe1.png"
+                  src="./assets/img/Wireframe1.png"
                   class="card-img-top"
                   alt="Immagine 1"
                 />
@@ -572,12 +509,14 @@
                     target="_blank"
                       href="https://www.behance.net/gallery/209730715/Wireframe-1"
                       class="btn btn-primary rounded-pill flex-grow-1 mx-2"
+                      rel="noopener"
                       >Vai alla parte 1</a
                     >
                     <a
                     target="_blank"
                       href="https://www.behance.net/gallery/209731283/Wireframe-2"
                       class="btn btn-primary rounded-pill flex-grow-1 mx-2"
+                      rel="noopener"
                       >Vai alla parte 2</a
                     >
                   </div>
@@ -590,7 +529,7 @@
             <div class="col-12">
               <div class="card">
                 <img
-                  src="./css/img/Accessibilità1.png"
+                  src="./assets/img/Accessibilità1.png"
                   class="card-img-top"
                   alt="Immagine 2"
                 />
@@ -610,12 +549,14 @@
                     target="_blank"
                       href="https://www.behance.net/gallery/209729827/Accessibilita-1"
                       class="btn btn-primary rounded-pill flex-grow-1 mx-2"
+                      rel="noopener"
                       >Vai alla parte 1</a
                     >
                     <a
                     target="_blank"
                       href="https://www.behance.net/gallery/209730075/Accessibilita-2"
                       class="btn btn-primary rounded-pill flex-grow-1 mx-2"
+                      rel="noopener"
                       >Vai alla parte 2</a
                     >
                   </div>
@@ -628,7 +569,7 @@
             <div class="col-12">
               <div class="card">
                 <img
-                  src="./css/img/Grafica.png"
+                  src="./assets/img/Grafica.png"
                   class="card-img-top"
                   alt="Immagine 3"
                 />
@@ -647,7 +588,7 @@
                   target="_blank"
                     href="https://www.behance.net/gallery/209670511/Progetto-di-Grafica"
                     class="btn btn-primary rounded-pill"
-                    class="btn btn-primary rounded-pill"
+                    rel="noopener"
                     >Vai al progetto</a
                   >
                 </div>
@@ -659,7 +600,7 @@
             <div class="col-12">
               <div class="card">
                 <img
-                  src="./css/img/Discovery1.png"
+                  src="./assets/img/Discovery1.png"
                   class="card-img-top"
                   alt="Immagine 4"
                 />
@@ -677,12 +618,14 @@
                     target="_blank"
                       href="https://www.behance.net/gallery/209678619/Progetto-di-Discovery-1"
                       class="btn btn-primary rounded-pill flex-grow-1 mx-2"
+                      rel="noopener"
                       >Vai alla parte 1</a
                     >
                     <a
                     target="_blank"
                       href="https://www.behance.net/gallery/209729573/Discovery-2"
                       class="btn btn-primary rounded-pill flex-grow-1 mx-2"
+                      rel="noopener"
                       >Vai alla parte 2</a
                     >
                   </div>
@@ -694,7 +637,7 @@
             <div class="col-12">
               <div class="card">
                 <img
-                  src="./css/img/Copywriting.png"
+                  src="./assets/img/Copywriting.png"
                   class="card-img-top"
                   alt="Immagine 5"
                 />
@@ -712,6 +655,7 @@
                   target="_blank"
                     href="https://www.behance.net/gallery/209674263/Progetto-di-Copywriting"
                     class="btn btn-primary rounded-pill"
+                    rel="noopener"
                     >Vai al progetto</a
                   >
                 </div>
@@ -742,14 +686,14 @@
 
     <!--Timeline-->
     
-    <section class="timeline-container" id="percorsoTarget" style="padding-bottom: 40px; padding-top: 40px;">
+    <section class="timeline-container" id="percorsoTarget" >
       <div class="container">
         <h2 class="about-title text-center mb-4">
           <span class="recent-title">Il Mio </span>
           <span class="projects-title">Percorso</span>
         </h2>
-        <div class="timeline" style=" display: flex; flex-direction: row; justify-content: space-between;  margin: 0;padding: 0; height: 100%; flex-wrap: wrap;">
-          <div class="timeline-item row " style="padding: 0;margin: 0; height: 100%;">
+        <div class="timeline" >
+          <div class="timeline-item row ">
             <div class="timeline-date ">
               <span class="timeline-heading">Esperienze lavorative</span>
             </div>
@@ -790,7 +734,7 @@
                 <div class="container">
                   <div class="row">
                       <!-- Primo div -->
-                      <div class="col-12 col-md-6 mb-4 d-flex flex-column " style="row-gap: 8px;" >
+                      <div class="col-12 col-md-6 mb-4 d-flex flex-column gap-8px "  >
                           <span>Istituto Superiore “Archimede” - IPCT 2010/15<br/></span>
                           <span>Fastweb Digital Academy 2018<br/></span>
                           <span>Start2Impact University 2023/IN CORSO</span>
@@ -810,7 +754,7 @@
                 <div class="container">
                   <div class="row">
                       <!-- Primo div -->
-                      <div   style="display: flex; row-gap: 8px; justify-content: space-between;  flex-wrap: wrap;" >
+                      <div   class="firstDivTimeline"  >
                         <div class="icon-container" data-title="Fotografia">
                         <svg  xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M2 19V9a2 2 0 0 1 2-2h.5a2 2 0 0 0 1.6-.8l2.22-2.96A.6.6 0 0 1 8.8 3h6.4a.6.6 0 0 1 .48.24L17.9 6.2a2 2 0 0 0 1.6.8h.5a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2"/><path d="M12 17a4 4 0 1 0 0-8a4 4 0 0 0 0 8"/></g></svg>
                         </div>
@@ -838,25 +782,24 @@
             </div>
           </div>
         
-          <!-- Aggiungi altre voci del percorso formativo qui -->
         </div>
 
         
-        <div class="timeline-content2 "style="  height:'100%' ;">
-          <div class="timeline-date col-md-3 text-md-start mb-2 mb-md-0" style="padding-bottom: 16px;">
+        <div class="timeline-content2 ">
+          <div class="timeline-date col-md-3 text-md-start mb-2 mb-md-0 pb-3 " >
             <span class="timeline-heading">Le Mie Skills</span>
           </div>
-          <div class="timeline-card  shadow-sm" style="height:fit-content ;"> 
+          <div class="timeline-card  shadow-sm" > 
             
             <div class="container"  >
               
-              <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; ">
-                <div style="width: 50%;   display: flex; flex-direction: column; align-items: center;justify-content: center;">
+              <div class="box1">
+                <div class="box2">
 
                   <!-- Primo div -->
                   <div >
                       <span>SOFT SKILLS</span>
-                      <p class="timeline-description mt-2" style="line-height: 2;">
+                      <p class="timeline-description mt-2" >
                           Risoluzione dei problemi<br/>
                           Comprensione dei principi di accessibilità<br/>
                           Curiosità e apprendimento continuo<br/>
@@ -868,7 +811,7 @@
                   <!-- Secondo div -->
                   <div >
                       <span>HARD SKILLS</span>
-                      <p class="timeline-description mt-2" style="line-height: 2;">
+                      <p class="timeline-description mt-2" >
                         Conoscenza dei principi del design<br/>
                         Conoscenza dei principi di interazione<br/>
                         Comprensione dei principi di accessibilità<br/>
@@ -922,8 +865,8 @@
      
         
         
-        <h1 class="about-claim">Ti piace ciò che hai visto?</h1>
-        <h1 class="about-claim">Seguimi sui social!</h1>
+        <h2 class="about-claim">Ti piace ciò che hai visto?</h2>
+        <h2 class="about-claim">Seguimi sui social!</h2>
 
         <!-- Social Icons -->
         <div class="about-social-icons my-4">
@@ -950,30 +893,26 @@
         <div class="row">
           <div class="col-12 d-flex justify-content-between align-items-center">
             <div class="text-start">
-              <a href="#" class="about-footer-text about-nav-link"
-                >Portfolio.</a
-              >
+              <a href="#" class="about-footer-text about-nav-link">Carola Caccamo.</a>
             </div>
-           
-            <div class="text-center" >
+            
+            <div class="text-center">
               <a href="#skillsTarget" class="about-nav-link mx-2">Skills</a>
-              <a href="#abotuMeTarget" class="about-nav-link mx-2">Su di Me</a>
+              <a href="#aboutMeTarget" class="about-nav-link mx-2">Su di Me</a>
               <a href="#projectTarget" class="about-nav-link mx-2">Progetti</a>
-              <a href="#percorsoTarget" class="about-nav-link mx-2 "">Percorso</a>
+              <a href="#percorsoTarget" class="about-nav-link mx-2">Percorso</a>
             </div>
+            
             <div class="text-end">
-              <a href="/form.html" class="about-footer-text about-nav-link"
-                >Contact me</a
-              >
+              <a href="/form.html" class="about-footer-text about-nav-link">Contact me</a>
             </div>
           </div>
         </div>
+        
       </div>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
-    <script src="js/scripts.js"></script>
   </body>
 </html>

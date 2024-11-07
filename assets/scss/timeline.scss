@@ -1,3 +1,4 @@
+// Stile personalizzato per la sezione timeline
 .timeline-container {
   background-color: #f5f5f5;
   padding: 40px 0;
@@ -34,36 +35,37 @@
   margin-left: auto;
   margin-right: auto;
   flex-basis: 40%;
+
 }
 
 .timeline-item {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; // Colonna sia per desktop che mobile
   align-items: flex-start;
   margin-bottom: 2rem;
   width: 50%;
-}
-.timeline-item .row {
-  padding: 0;
-  margin: 0;
-  height: 100%;
+
+  .row {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+  }
 }
 
 .timeline-date {
   padding-bottom: 8px;
   font-size: 1rem;
   color: #757575;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem; // Spazio tra la data e la card
   text-align: left;
 }
 
 .timeline-card {
   background-color: #fff;
   border-radius: 12px;
-  border-left: 4px solid #6200ea;
+  border-left: 4px solid #6200ea; // Material 3 color
   padding: 34px;
-  width: 100%;
-  height: -moz-fit-content;
+  width: 100%; // La card occupa l'intera larghezza
   height: fit-content;
 }
 
@@ -103,6 +105,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
 }
 
 @media (max-width: 1280px) {
@@ -116,4 +119,4 @@
   .iconPack {
     justify-content: center;
   }
-}/*# sourceMappingURL=timeline.css.map */
+}

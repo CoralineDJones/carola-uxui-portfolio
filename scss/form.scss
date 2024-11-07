@@ -1,0 +1,41 @@
+// Imposta la stessa altezza per l'immagine del form in modalità desktop
+@media (min-width: 768px) {
+  .form-img {
+    height: 100%;
+    object-fit: cover; // Per coprire l'intero spazio mantenendo le proporzioni
+  }
+  .form-container {
+    height: 100%; // Allinea il contenitore del form alla stessa altezza
+  }
+  .textArea {
+    border-radius: 20px;
+  }
+  .formCont {
+    padding: 16px 0;
+  }
+}
+
+// Personalizzazione per Material Design 3
+.text-custom-black {
+  color: #000000;
+  font-weight: 400;
+}
+
+// Stile personalizzato per l'email colorata
+.email-color {
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+// Stile personalizzato per il testo cerchiato
+.circle-outline {
+  display: inline-block;
+  padding: 8px 16px; // Spaziatura interna
+  border: 1px solid var(--secondary-color); // Bordo blu (puoi cambiarlo)
+  border-radius: 50px; // Angoli arrotondati per creare effetto cerchio/ovale
+  color: var(--primary-color); // Colore del testo
+  text-align: center;
+  text-decoration: none; // Rimuove eventuali sottolineature
+  font-size: 14px; // Dimensione del testo
+  font-weight: 500; // Peso del testo
+}

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form di contatto</title>
-    <link rel="icon" type="image/svg+xml" href="./css/img/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="./assets/img/favicon.ico" />
 
     <!-- Bootstrap CSS -->
     <link
@@ -31,62 +31,21 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
     <!-- Navbar CSS -->
-    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="./assets/css/navbar.css" />
     <!-- Custom Styles -->
     <!-- Section Footer-->
-    <link rel="stylesheet" href="css/footer.css" />
-    <style>
-      /* Imposta la stessa altezza per l'immagine del form in modalità desktop */
-      @media (min-width: 768px) {
-        .form-img {
-          height: 100%;
-          object-fit: cover; /* Per coprire l'intero spazio mantenendo le proporzioni */
-        }
-        .form-container {
-          height: 100%; /* Allinea il contenitore del form alla stessa altezza */
-        }
-        .textArea {
-          border-radius: 20px;
-        }
-        .formCont {
-          padding: 16px 0;
-        }
-      }
-
-      /* Personalizzazione per Material Design 3 */
-      .text-custom-black {
-        color: #000000;
-        font-weight: 400;
-      }
-
-      /* Stile personalizzato per l'email colorata */
-      .email-color {
-        color: var(--secondary-color);
-        font-weight: 600;
-      }
-
-      /* Stile personalizzato per il testo cerchiato */
-      .circle-outline {
-        display: inline-block;
-        padding: 8px 16px; /* Spaziatura interna */
-        border: 1px solid var(--secondary-color); /* Bordo blu (puoi cambiarlo) */
-        border-radius: 50px; /* Angoli arrotondati per creare effetto cerchio/ovale */
-        color: var(--primary-color); /* Colore del testo */
-        text-align: center;
-        text-decoration: none; /* Rimuove eventuali sottolineature */
-        font-size: 14px; /* Dimensione del testo */
-        font-weight: 500; /* Peso del testo */
-      }
-    </style>
+    <link rel="stylesheet" href="./assets/css/footer.css" />
+    <link rel="stylesheet" href="./assets/css/form.css" />
   </head>
   <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg sticky-navbar">
       <div class="container">
-        <a class="navbar-brand fw-bold" href="/index.html"><img alt="logo" src="./css/img/favicon.ico"></a>
-      
+        <a class="navbar-brand fw-bold" href="/index.html"
+          ><img alt="logo" src="./assets/img/favicon.ico"
+        /></a>
       </div>
     </nav>
 
@@ -98,7 +57,7 @@
           class="col-md-6 mb-4 mb-md-0 d-flex justify-content-center align-items-center"
         >
           <img
-            src="./css/img/contactme.png"
+            src="./assets/img/contactme.png"
             alt="Immagine"
             class="img-fluid rounded form-img"
           />
@@ -109,13 +68,6 @@
           class="col-md-6 d-flex flex-column justify-content-center form-container"
         >
           <h2 class="text-left mb-2">Mettiamoci in contatto!</h2>
-
-          <!-- <p class="text-custom-black mb-4">
-                  Or just reach out manually to 
-                  <span class="email-color">email.prova@gmail.com</span>
-              </p>
-      -->
-
           <form id="contact-form">
             <div class="mb-3">
               <label for="nome" class="form-label">Nome</label>
@@ -163,25 +115,14 @@
           </form>
         </div>
       </div>
-      <!--  <div style="margin-top: 80px; margin-bottom: 40px;"> 
-        <p>
-          <span class="circle-outline">Reach Out To Us</span>
-      </p>
-      <h2 class="text-left mb-2 ">Let's Get In Touch.</h2>
-               
-      <p class="text-custom-black mb-4">
-          Or just reach out manually to 
-          <span class="email-color">email.prova@gmail.com</span>
-      </p>
-    </div> -->
     </div>
 
     <!--Footer-->
     <footer class="about-footer py-5">
       <div class="container text-center">
         <!-- Claim -->
-        <h1 class="about-claim">Ti piace ciò che hai visto?</h1>
-        <h1 class="about-claim">Seguimi sui social!</h1>
+        <h2 class="about-claim">Ti piace ciò che hai visto?</h2>
+        <h2 class="about-claim">Seguimi sui social!</h2>
 
         <!-- Social Icons -->
         <div class="about-social-icons my-4">
@@ -209,10 +150,9 @@
           <div class="col-12 d-flex justify-content-between align-items-center">
             <div class="text-start">
               <a href="/index.html" class="about-footer-text about-nav-link"
-                >Portfolio.</a
+                >Carola Caccamo.</a
               >
             </div>
-         
           </div>
         </div>
       </div>
@@ -220,28 +160,7 @@
 
     <!-- EmailJS Integration -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-      (function () {
-        emailjs.init("2DTnHWKg236Kyn9fm"); // Inserisci il tuo User ID EmailJS qui
-      })();
-
-      document
-        .getElementById("contact-form")
-        .addEventListener("submit", function (event) {
-          event.preventDefault();
-
-          emailjs.sendForm("service_14e5rhc", "template_ctosjtl", this).then(
-            function () {
-              alert("Messaggio inviato con successo!");
-            },
-            function (error) {
-              alert(
-                "Errore nell'invio del messaggio: " + JSON.stringify(error)
-              );
-            }
-          );
-        });
-    </script>
+   <script src="./assets/js/contact.js"></script>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

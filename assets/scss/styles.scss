@@ -1,0 +1,125 @@
+// Impostazioni generali
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primary-color: #11054e;
+  --secondary-color: #6a52e4;
+  --background-color: #f5f3fb;
+  --support-text-color: #a17fff;
+}
+
+// Imposta il background per il body
+body {
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  font-family: "SUSE", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+// Stile dei pulsanti
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-outline-primary {
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+
+  &:hover {
+    background-color: var(--primary-color);
+    color: white;
+  }
+}
+
+// Modifica per la navbar
+.navbar-brand {
+  color: var(--primary-color);
+}
+
+.nav-link {
+  color: var(--primary-color);
+
+  &:hover {
+    color: var(--secondary-color);
+  }
+}
+
+// Testo di supporto
+.text-secondary,
+.text-muted {
+  color: var(--support-text-color);
+}
+
+// Stili per i titoli
+h1, h2, h3, h4, h5 {
+  color: var(--primary-color);
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 600; // semibold
+}
+
+h3 {
+  font-size: 28px;
+  font-weight: 600; // semibold
+}
+
+h4 {
+  font-size: 24px;
+  font-weight: 500; // medium
+}
+
+h5 {
+  font-size: 24px;
+  font-weight: 400; // regular
+}
+
+// Stile di base per le icone
+.icon-container,
+.icon-container2 {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  margin: 8px;
+
+  &::after {
+    content: attr(data-title);
+    position: absolute;
+    bottom: 120%; // Posiziona sopra l'icona
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out;
+    pointer-events: none;
+  }
+
+  &:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
+}

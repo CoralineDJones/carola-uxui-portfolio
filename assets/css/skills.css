@@ -1,0 +1,50 @@
+body .claim-section {
+  background: linear-gradient(90deg, #6a52e4, #a17fff); /* Gradiente */
+  padding: 100px 0;
+}
+body .claim-section .claim-text {
+  color: white;
+  font-weight: 600;
+}
+body .claim-section .claim-text .intuitive {
+  color: #fff; /* Colore per la classe intuitiva */
+}
+body .claim-section .claim-text .delight {
+  color: #fff; /* Colore per la classe delight */
+}
+body .card-wrapper {
+  margin-top: -60px; /* Le card escono dalla sezione */
+}
+@media (max-width: 1280px) {
+  body .card-wrapper {
+    margin-top: -50px;
+  }
+}
+body .custom-card {
+  margin-bottom: 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: none;
+  transition: box-shadow 0.3s ease-in-out;
+  height: 270px;
+}
+body .custom-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+body .custom-card .card-title {
+  color: var(--secondary-color); /* Grigio chiaro per il sottotitolo */
+  font-weight: 700;
+}
+body .custom-card .card-subtitle {
+  color: var(--primary-color); /* Colore Material 3 */
+  font-weight: 500;
+}
+body .custom-card .card-text {
+  color: #424242; /* Testo della descrizione */
+}
+@media (max-width: 1280px) {
+  body .custom-card {
+    height: auto;
+  }
+}/*# sourceMappingURL=skills.css.map */

@@ -1,0 +1,122 @@
+// Stile personalizzato per la sezione timeline
+.timeline-container {
+  background-color: #f5f5f5;
+  padding: 40px 0;
+}
+
+.timeline-title {
+  font-size: 2rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  flex-wrap: wrap;
+}
+
+.timeline-content2 {
+  width: 50%;
+  height: 100%;
+}
+
+.iconPack {
+  width: 50%;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  flex-basis: 40%;
+
+}
+
+.timeline-item {
+  display: flex;
+  flex-direction: column; // Colonna sia per desktop che mobile
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  width: 50%;
+
+  .row {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+  }
+}
+
+.timeline-date {
+  padding-bottom: 8px;
+  font-size: 1rem;
+  color: #757575;
+  margin-bottom: 0.5rem; // Spazio tra la data e la card
+  text-align: left;
+}
+
+.timeline-card {
+  background-color: #fff;
+  border-radius: 12px;
+  border-left: 4px solid #6200ea; // Material 3 color
+  padding: 34px;
+  width: 100%; // La card occupa l'intera larghezza
+  height: fit-content;
+}
+
+.timeline-heading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #6200ea;
+}
+
+.timeline-description {
+  font-size: 1rem;
+  color: #616161;
+  line-height: 2;
+}
+
+.gap-8px {
+  row-gap: 8px;
+}
+
+.firstDivTimeline {
+  display: flex;
+  row-gap: 8px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.box1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.box2 {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+@media (max-width: 1280px) {
+  .timeline-content2 {
+    width: 100%;
+    padding: 12px;
+  }
+  .timeline-item {
+    width: 100%;
+  }
+  .iconPack {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ci siamo spostati! / We have moved!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --black: #000000;
+            --white: #ffffff;
+            --yellow: #FDE047;
+            --cyan: #67E8F9;
+            --purple: #C084FC;
+            --gray: #f0f0f0;
+            --shadow: 8px 8px 0px 0px var(--black);
+            --shadow-small: 4px 4px 0px 0px var(--black);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        body {
+            background-color: var(--gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        /* Language Toggle Logic */
+        #lang-toggle {
+            display: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background: var(--white);
+            border: 4px solid var(--black);
+            shadow: var(--shadow);
+            box-shadow: var(--shadow);
+            position: relative;
+            transform: rotate(-1deg);
+        }
+
+        .header {
+            background-color: var(--yellow);
+            border-bottom: 4px solid var(--black);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .lang-switcher {
+            display: flex;
+            border: 2px solid var(--black);
+            background: var(--white);
+        }
+
+        .lang-switcher label {
+            padding: 5px 10px;
+            font-weight: 900;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            transition: all 0.2s;
+        }
+
+        .lang-switcher label:first-child {
+            border-right: 2px solid var(--black);
+        }
+
+        /* Toggle behavior */
+        #lang-toggle:not(:checked) ~ .container .lang-it { background: var(--black); color: var(--white); }
+        #lang-toggle:checked ~ .container .lang-en { background: var(--black); color: var(--white); }
+        
+        #lang-toggle:not(:checked) ~ .container .content-en { display: none; }
+        #lang-toggle:checked ~ .container .content-it { display: none; }
+
+        .content {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .content p {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.4;
+            text-transform: uppercase;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--cyan);
+            color: var(--black);
+            text-decoration: none;
+            padding: 15px 30px;
+            border: 3px solid var(--black);
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            box-shadow: var(--shadow-small);
+            transition: all 0.1s;
+        }
+
+        .btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px var(--black);
+        }
+
+        .btn:active {
+            transform: translate(2px, 2px);
+            box-shadow: none;
+        }
+
+        .footer-tag {
+            position: absolute;
+            bottom: -20px;
+            right: 20px;
+            background: var(--purple);
+            border: 2px solid var(--black);
+            padding: 5px 15px;
+            font-weight: 900;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            transform: rotate(2deg);
+        }
+
+        /* Decorative Shapes */
+        .shape {
+            position: fixed;
+            z-index: -1;
+            border: 3px solid var(--black);
+        }
+        .shape-1 {
+            width: 100px; height: 100px; background: var(--purple); top: 10%; left: 10%; transform: rotate(15deg);
+        }
+        .shape-2 {
+            width: 150px; height: 150px; background: var(--cyan); bottom: 10%; right: 10%; border-radius: 50%;
+        }
+        .shape-3 {
+            width: 80px; height: 80px; background: var(--yellow); top: 20%; right: 15%; transform: rotate(-10deg);
+        }
+
+        @media (max-width: 480px) {
+            .header h1 { font-size: 1.2rem; }
+            .content p { font-size: 1rem; }
+            .container { transform: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <input type="checkbox" id="lang-toggle">
+
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+
+    <div class="container">
+        <div class="header">
+            <h1 class="content-it">Nuova Piattaforma!</h1>
+            <h1 class="content-en">New Platform!</h1>
+            <div class="lang-switcher">
+                <label for="lang-toggle" class="lang-it">IT</label>
+                <label for="lang-toggle" class="lang-en">EN</label>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="content-it">
+                <p>Ciao! Mi sono spostata su una nuova piattaforma! Clicca qui per andare al nuovo sito!</p>
+                <a href="https://portfolio-3888e.web.app/" class="btn">Vai al nuovo sito</a>
+            </div>
+            <div class="content-en">
+                <p>Hi! I have moved to a new platform! Click here to visit the new site!</p>
+                <a href="https://portfolio-3888e.web.app/" class="btn">Visit the new site</a>
+            </div>
+        </div>
+
+        <div class="footer-tag">Redirect Page v1.0</div>
+    </div>
+
+</body>
+</html>
